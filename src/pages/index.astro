@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero/Hero.astro";
+import WhyUs from "../components/WhyUs/WhyUs.astro";
+import ClassesPlans from "../components/ClassesPlans/ClassesPlans.astro";
+import Testimonials from "../components/Testimonials/Testimonials.astro";
+import CTA from "../components/CTA/CTA.astro";
+import Footer from "../components/Footer/Footer.astro";
+---
+
+<BaseLayout
+  title="Gym Sáenz Peña | Entrená en tu barrio"
+  description="Gimnasio de barrio en Sáenz Peña, Buenos Aires. Clases funcionales, musculación, spinning y más. Reservá tu clase de prueba gratis."
+>
+  <main>
+    <Hero />
+    <WhyUs />
+    <ClassesPlans />
+    <Testimonials />
+    <CTA />
+    <Footer />
+  </main>
+</BaseLayout>

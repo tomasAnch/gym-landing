@@ -1,0 +1,265 @@
+<section class="testimonials" id="testimonios">
+  <div class="testimonials__bg-text" aria-hidden="true">TESTIMONIOS</div>
+
+  <div class="testimonials__container">
+    <header class="testimonials__header">
+      <p class="testimonials__tag">// TESTIMONIOS</p>
+      <h2 class="testimonials__title">
+        <span class="testimonials__title-line">LOS QUE</span>
+        <span class="testimonials__title-line testimonials__title-line--accent">ENTRENAN ACÁ</span>
+      </h2>
+      <p class="testimonials__desc">
+        Esto no lo decimos nosotros. Lo dicen los que vienen, trasnpiran y vuelven al otro día.
+      </p>
+    </header>
+
+    <div class="testimonials__grid">
+      <article class="testimonials__card">
+        <span class="testimonials__quote-icon" aria-hidden="true">"</span>
+        <p class="testimonials__text">
+          Bajé <strong class="testimonials__highlight">8kg</strong> en 4 meses y encontré un grupo que me banca todos los días. No sabés lo que es entrenar con gente que tira para adelante.
+        </p>
+        <footer class="testimonials__author">
+          <div class="testimonials__avatar" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="20" fill="var(--color-border)"/>
+              <circle cx="20" cy="14" r="6" fill="var(--color-text-dim)"/>
+              <ellipse cx="20" cy="30" rx="10" ry="8" fill="var(--color-text-dim)"/>
+            </svg>
+          </div>
+          <div class="testimonials__author-info">
+            <span class="testimonials__author-name">MARTÍN</span>
+            <span class="testimonials__author-detail">34 AÑOS / 4 MESES</span>
+          </div>
+        </footer>
+      </article>
+
+      <article class="testimonials__card">
+        <span class="testimonials__quote-icon" aria-hidden="true">"</span>
+        <p class="testimonials__text">
+          Empecé sin saber usar una máquina y ahora voy <strong class="testimonials__highlight">4 veces por semana</strong>. Los profes son un lujo, siempre atentos.
+        </p>
+        <footer class="testimonials__author">
+          <div class="testimonials__avatar" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="20" fill="var(--color-border)"/>
+              <circle cx="20" cy="14" r="6" fill="var(--color-text-dim)"/>
+              <ellipse cx="20" cy="30" rx="10" ry="8" fill="var(--color-text-dim)"/>
+            </svg>
+          </div>
+          <div class="testimonials__author-info">
+            <span class="testimonials__author-name">CAROLINA</span>
+            <span class="testimonials__author-detail">28 AÑOS / 6 MESES</span>
+          </div>
+        </footer>
+      </article>
+
+      <article class="testimonials__card">
+        <span class="testimonials__quote-icon" aria-hidden="true">"</span>
+        <p class="testimonials__text">
+          Probé tres gimnasios antes. Este es el único donde <strong class="testimonials__highlight">volver al otro día</strong> no se siente como una obligación, son muchas ganas.
+        </p>
+        <footer class="testimonials__author">
+          <div class="testimonials__avatar" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="20" fill="var(--color-border)"/>
+              <circle cx="20" cy="14" r="6" fill="var(--color-text-dim)"/>
+              <ellipse cx="20" cy="30" rx="10" ry="8" fill="var(--color-text-dim)"/>
+            </svg>
+          </div>
+          <div class="testimonials__author-info">
+            <span class="testimonials__author-name">FRANCO</span>
+            <span class="testimonials__author-detail">41 AÑOS / 1 AÑO</span>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    position: relative;
+    padding: var(--space-xl) var(--container-padding);
+    background: var(--color-bg);
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonials__bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 22vw, 18rem);
+    font-weight: var(--fw-extrablack);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-border);
+    opacity: 0.08;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .testimonials__container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+
+  .testimonials__tag {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+  }
+
+  .testimonials__title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-extrablack);
+    text-transform: uppercase;
+    line-height: 0.92;
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonials__title-line {
+    display: block;
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    color: var(--color-text);
+  }
+
+  .testimonials__title-line--accent {
+    color: var(--color-accent);
+  }
+
+  .testimonials__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 520px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .testimonials__card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+  }
+
+  .testimonials__quote-icon {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: var(--fw-extrablack);
+    line-height: 1;
+    color: var(--color-accent);
+    opacity: 0.3;
+    margin-bottom: var(--space-sm);
+  }
+
+  .testimonials__text {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    flex: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonials__highlight {
+    color: var(--color-accent);
+    font-weight: var(--fw-bold);
+  }
+
+  .testimonials__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonials__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .testimonials__avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .testimonials__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonials__author-name {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .testimonials__author-detail {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: var(--fw-medium);
+    color: var(--color-text-dim);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials {
+      padding: var(--space-2xl) var(--container-padding);
+    }
+
+    .testimonials__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonials__card:last-child {
+      grid-column: 1 / -1;
+      max-width: 50%;
+      justify-self: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonials {
+      padding: var(--space-2xl) var(--container-padding);
+    }
+
+    .testimonials__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .testimonials__card:last-child {
+      grid-column: auto;
+      max-width: none;
+      justify-self: auto;
+    }
+  }
+</style>

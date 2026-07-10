@@ -1,0 +1,199 @@
+<section class="why-us" id="nosotros">
+  <div class="why-us__bg-text" aria-hidden="true">NOSOTROS</div>
+
+  <div class="why-us__layout">
+    <header class="why-us__intro">
+      <p class="why-us__tag">// NOSOTROS</p>
+      <h2 class="why-us__title">
+        <span class="why-us__title-line">POR QUÉ</span>
+        <span class="why-us__title-line why-us__title-line--accent">ELEGIRNOS</span>
+      </h2>
+      <p class="why-us__desc">
+        En Gym Sáenz Peña no somos solo máquinas y pesas. Somos la comunidad que te espera cada día, los entrenadores que saben tu nombre y el ambiente que te hace querer volver.
+      </p>
+    </header>
+
+    <div class="why-us__cards">
+      <article class="why-us__card">
+        <span class="why-us__card-number" aria-hidden="true">01</span>
+        <div class="why-us__card-body">
+          <h3 class="why-us__card-title">COMUNIDAD REAL</h3>
+          <p class="why-us__card-desc">
+            Acá no sos un número. Todos se conocen, se apoyan y crecen juntos. Somos un grupo que entrena, no solo un lugar con máquinas.
+          </p>
+        </div>
+      </article>
+
+      <article class="why-us__card">
+        <span class="why-us__card-number" aria-hidden="true">02</span>
+        <div class="why-us__card-body">
+          <h3 class="why-us__card-title">ENTRENADORES PRESENTES</h3>
+          <p class="why-us__card-desc">
+            Cada clase tiene un profe que está ahí con vos. Corrigiendo, motivando, empujando. Nada de máquinas solas y mirar el celular.
+          </p>
+        </div>
+      </article>
+
+      <article class="why-us__card">
+        <span class="why-us__card-number" aria-hidden="true">03</span>
+        <div class="why-us__card-body">
+          <h3 class="why-us__card-title">AMBIENTE QUE MUEVE</h3>
+          <p class="why-us__card-desc">
+            La energía del grupo, la música, el compromiso. Un lugar donde las excusas se quedan afuera y las ganas de volver crecen cada día.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-us {
+    position: relative;
+    padding: var(--space-xl) var(--container-padding);
+    background: var(--color-bg);
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .why-us__bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 20vw, 16rem);
+    font-weight: var(--fw-extrablack);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-border);
+    opacity: 0.15;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .why-us__layout {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .why-us__tag {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  .why-us__title {
+    font-family: var(--font-display);
+    font-weight: var(--fw-extrablack);
+    text-transform: uppercase;
+    line-height: 0.92;
+    margin-bottom: var(--space-lg);
+  }
+
+  .why-us__title-line {
+    display: block;
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    color: var(--color-text);
+  }
+
+  .why-us__title-line--accent {
+    color: var(--color-accent);
+  }
+
+  .why-us__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 480px;
+  }
+
+  .why-us__cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .why-us__card {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast);
+  }
+
+  .why-us__card:hover {
+    border-color: var(--color-accent);
+  }
+
+  .why-us__card-number {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--fw-bold);
+    color: var(--color-text-dim);
+    letter-spacing: var(--tracking-wide);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .why-us__card-body {
+    flex: 1;
+  }
+
+  .why-us__card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-bottom: var(--space-sm);
+  }
+
+  .why-us__card-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  @media (min-width: 768px) {
+    .why-us__card {
+      padding: var(--space-xl);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-us {
+      padding: var(--space-2xl) var(--container-padding);
+    }
+
+    .why-us__layout {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: start;
+    }
+
+    .why-us__intro {
+      position: sticky;
+      top: var(--space-2xl);
+    }
+
+    .why-us__cards {
+      gap: var(--space-lg);
+    }
+  }
+</style>
