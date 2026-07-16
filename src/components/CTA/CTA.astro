@@ -1,17 +1,17 @@
-<section class="cta">
+<section class="cta" data-animate>
   <div class="cta__bg-text" aria-hidden="true">PRUEBA</div>
 
   <div class="cta__container">
     <header class="cta__content">
-      <p class="cta__tag">// CTA FINAL</p>
-      <h2 class="cta__title">
+      <p class="cta__tag" data-animate>// CTA FINAL</p>
+      <h2 class="cta__title" data-animate>
         <span class="cta__title-line">¿LISTO PARA</span>
         <span class="cta__title-line cta__title-line--accent">EMPEZAR?</span>
       </h2>
-      <p class="cta__desc">
+      <p class="cta__desc" data-animate>
         Tu primera clase es gratis. Vení a conocer el gimnasio, probá una clase y sentí la diferencia. Sin compromiso, solo entrenamiento de verdad.
       </p>
-      <div class="cta__buttons">
+      <div class="cta__buttons" data-animate>
         <a href="#" class="cta__btn cta__btn--primary">
           Reservá tu clase de prueba gratis
           <span class="cta__btn-arrow" aria-hidden="true">→</span>
@@ -161,6 +161,22 @@
   .cta__btn-icon {
     display: inline-flex;
     align-items: center;
+  }
+
+  .cta__tag {
+    transition-delay: 0s;
+  }
+
+  .cta__title {
+    transition-delay: 0.1s;
+  }
+
+  .cta__desc {
+    transition-delay: 0.15s;
+  }
+
+  .cta__buttons {
+    transition-delay: 0.25s;
   }
 
   @media (min-width: 768px) {

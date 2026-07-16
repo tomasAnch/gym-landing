@@ -1,20 +1,21 @@
-<section class="classes" id="clases">
+<section class="classes" id="clases" data-animate>
   <div class="classes__bg-text" aria-hidden="true">ENTRENÁ</div>
 
   <div class="classes__container">
     <header class="classes__header">
-      <p class="classes__tag">// CLASES</p>
-      <h2 class="classes__title">
+      <p class="classes__tag" data-animate>// CLASES</p>
+      <h2 class="classes__title" data-animate>
         <span class="classes__title-line">ELEGÍ TU</span>
         <span class="classes__title-line classes__title-line--accent">CAMINO</span>
       </h2>
-      <p class="classes__desc">
+      <p class="classes__desc" data-animate>
         Desde musculación hasta zumba, tenemos lo que necesitás para moverte. Clases en grupo o entrenamiento solo, siempre con un profe al lado.
       </p>
     </header>
 
     <div class="classes__grid">
-      <article class="classes__item">
+      <article class="classes__item" data-animate style="background-image: url(/class-musculacion-comp.jpg)">
+        <span class="classes__item-overlay" aria-hidden="true"></span>
         <span class="classes__item-num" aria-hidden="true">01</span>
         <div class="classes__item-body">
           <h3 class="classes__item-title">MUSCULACIÓN</h3>
@@ -22,7 +23,8 @@
         </div>
       </article>
 
-      <article class="classes__item">
+      <article class="classes__item" data-animate style="background-image: url(/class-funcional-comp.jpg)">
+        <span class="classes__item-overlay" aria-hidden="true"></span>
         <span class="classes__item-num" aria-hidden="true">02</span>
         <div class="classes__item-body">
           <h3 class="classes__item-title">FUNCIONALES GRUPALES</h3>
@@ -30,7 +32,8 @@
         </div>
       </article>
 
-      <article class="classes__item">
+      <article class="classes__item" data-animate style="background-image: url(/class-spinning-comp.jpg)">
+        <span class="classes__item-overlay" aria-hidden="true"></span>
         <span class="classes__item-num" aria-hidden="true">03</span>
         <div class="classes__item-body">
           <h3 class="classes__item-title">SPINNING</h3>
@@ -38,7 +41,8 @@
         </div>
       </article>
 
-      <article class="classes__item">
+      <article class="classes__item" data-animate style="background-image: url(/class-personal-comp.jpg)">
+        <span class="classes__item-overlay" aria-hidden="true"></span>
         <span class="classes__item-num" aria-hidden="true">04</span>
         <div class="classes__item-body">
           <h3 class="classes__item-title">PERSONAL TRAINER</h3>
@@ -46,7 +50,8 @@
         </div>
       </article>
 
-      <article class="classes__item">
+      <article class="classes__item" data-animate style="background-image: url(/class-zumba-comp.jpg)">
+        <span class="classes__item-overlay" aria-hidden="true"></span>
         <span class="classes__item-num" aria-hidden="true">05</span>
         <div class="classes__item-body">
           <h3 class="classes__item-title">ZUMBA</h3>
@@ -57,21 +62,21 @@
   </div>
 </section>
 
-<section class="plans" id="planes">
+<section class="plans" id="planes" data-animate>
   <div class="plans__bg-text" aria-hidden="true">PLANES</div>
 
   <div class="plans__container">
     <header class="plans__header">
-      <p class="plans__tag">// PLANES</p>
-      <h2 class="plans__title">
+      <p class="plans__tag" data-animate>// PLANES</p>
+      <h2 class="plans__title" data-animate>
         <span class="plans__title-line">ELEGÍ TU</span>
         <span class="plans__title-line plans__title-line--accent">INTENSIDAD</span>
       </h2>
-      <p class="plans__desc">Sin permanencia. Sin letra chica. Elegí el plan que mejor se adapte a tu meta y empezá cuando quieras.</p>
+      <p class="plans__desc" data-animate>Sin permanencia. Sin letra chica. Elegí el plan que mejor se adapte a tu meta y empezá cuando quieras.</p>
     </header>
 
     <div class="plans__grid">
-      <article class="plans__card">
+      <article class="plans__card" data-animate>
         <p class="plans__card-label">01 / BÁSICO</p>
         <p class="plans__card-name">ENTRENÁ LIBRE</p>
         <p class="plans__card-price"><span class="plans__card-price-num">$25.000</span> /MES</p>
@@ -92,7 +97,7 @@
         <a href="#" class="plans__card-btn plans__card-btn--outline">ELEGIR PLAN</a>
       </article>
 
-      <article class="plans__card plans__card--featured">
+      <article class="plans__card plans__card--featured" data-animate>
         <span class="plans__card-badge">MÁS ELEGIDO</span>
         <p class="plans__card-label">02 / FULL</p>
         <p class="plans__card-name">TODO INCLUIDO</p>
@@ -118,7 +123,7 @@
         <a href="#" class="plans__card-btn plans__card-btn--primary">ELEGIR PLAN</a>
       </article>
 
-      <article class="plans__card">
+      <article class="plans__card" data-animate>
         <p class="plans__card-label">03 / PERSONALIZADO</p>
         <p class="plans__card-name">UNO A UNO</p>
         <p class="plans__card-price"><span class="plans__card-price-num">$65.000</span> /MES</p>
@@ -224,24 +229,48 @@
   }
 
   .classes__item {
+    position: relative;
+    min-height: 220px;
     display: flex;
+    align-items: flex-end;
     gap: var(--space-lg);
     padding: var(--space-lg);
-    background: var(--color-bg-card);
+    background-size: cover;
+    background-position: center;
+    background-color: #111;
     border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .classes__item:hover {
+    border-color: var(--color-accent);
+    transform: scale(1.02);
+  }
+
+  .classes__item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.85) 100%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .classes__item-num {
+    position: relative;
+    z-index: 1;
     font-family: var(--font-display);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: var(--fw-bold);
     color: var(--color-accent);
     letter-spacing: var(--tracking-wide);
     flex-shrink: 0;
-    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
   }
 
   .classes__item-body {
+    position: relative;
+    z-index: 1;
     flex: 1;
   }
 
@@ -261,6 +290,24 @@
     line-height: 1.6;
     color: var(--color-text-muted);
   }
+
+  .classes__tag {
+    transition-delay: 0s;
+  }
+
+  .classes__title {
+    transition-delay: 0.1s;
+  }
+
+  .classes__desc {
+    transition-delay: 0.15s;
+  }
+
+  .classes__item:nth-child(1) { transition-delay: 0.2s; }
+  .classes__item:nth-child(2) { transition-delay: 0.27s; }
+  .classes__item:nth-child(3) { transition-delay: 0.34s; }
+  .classes__item:nth-child(4) { transition-delay: 0.41s; }
+  .classes__item:nth-child(5) { transition-delay: 0.48s; }
 
   /* ============ PLANS SECTION ============ */
   .plans {
@@ -347,11 +394,21 @@
     padding: var(--space-xl) var(--space-lg);
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .plans__card:hover {
+    border-color: var(--color-text-dim);
+    transform: translateY(-4px);
   }
 
   .plans__card--featured {
     border-color: var(--color-accent);
     background: var(--color-bg-elevated);
+  }
+
+  .plans__card--featured:hover {
+    border-color: var(--color-accent-hover);
   }
 
   .plans__card-badge {
@@ -468,18 +525,38 @@
     background: var(--color-accent-hover);
   }
 
+  .plans__tag {
+    transition-delay: 0s;
+  }
+
+  .plans__title {
+    transition-delay: 0.1s;
+  }
+
+  .plans__desc {
+    transition-delay: 0.15s;
+  }
+
+  .plans__card:nth-child(1) { transition-delay: 0.2s; }
+  .plans__card:nth-child(2) { transition-delay: 0.3s; }
+  .plans__card:nth-child(3) { transition-delay: 0.4s; }
+
   /* ============ RESPONSIVE ============ */
   @media (min-width: 768px) {
     .classes {
-      padding: var(--space-3xl) var(--container-padding);
+      padding: var(--space-2xl) var(--container-padding);
     }
 
     .classes__grid {
       grid-template-columns: 1fr 1fr;
     }
 
+    .classes__item {
+      min-height: 260px;
+    }
+
     .plans {
-      padding: var(--space-3xl) var(--container-padding);
+      padding: var(--space-2xl) var(--container-padding);
     }
   }
 
@@ -503,6 +580,10 @@
 
     .plans__card--featured {
       transform: scale(1.05);
+    }
+
+    .plans__card--featured:hover {
+      transform: scale(1.05) translateY(-4px);
     }
   }
 </style>

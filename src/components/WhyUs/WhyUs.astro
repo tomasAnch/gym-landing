@@ -1,20 +1,21 @@
-<section class="why-us" id="nosotros">
+<section class="why-us" id="nosotros" data-animate>
   <div class="why-us__bg-text" aria-hidden="true">NOSOTROS</div>
 
   <div class="why-us__layout">
     <header class="why-us__intro">
-      <p class="why-us__tag">// NOSOTROS</p>
-      <h2 class="why-us__title">
+      <p class="why-us__tag" data-animate>// NOSOTROS</p>
+      <h2 class="why-us__title" data-animate>
         <span class="why-us__title-line">POR QUÉ</span>
         <span class="why-us__title-line why-us__title-line--accent">ELEGIRNOS</span>
       </h2>
-      <p class="why-us__desc">
+      <p class="why-us__desc" data-animate>
         En Gym Sáenz Peña no somos solo máquinas y pesas. Somos la comunidad que te espera cada día, los entrenadores que saben tu nombre y el ambiente que te hace querer volver.
       </p>
     </header>
 
     <div class="why-us__cards">
-      <article class="why-us__card">
+      <article class="why-us__card" data-animate style="background-image: url(/whyus-comunidad-comp.jpg)">
+        <span class="why-us__card-overlay" aria-hidden="true"></span>
         <span class="why-us__card-number" aria-hidden="true">01</span>
         <div class="why-us__card-body">
           <h3 class="why-us__card-title">COMUNIDAD REAL</h3>
@@ -24,7 +25,8 @@
         </div>
       </article>
 
-      <article class="why-us__card">
+      <article class="why-us__card" data-animate style="background-image: url(/whyus-entrenadores-comp.jpg)">
+        <span class="why-us__card-overlay" aria-hidden="true"></span>
         <span class="why-us__card-number" aria-hidden="true">02</span>
         <div class="why-us__card-body">
           <h3 class="why-us__card-title">ENTRENADORES PRESENTES</h3>
@@ -34,7 +36,8 @@
         </div>
       </article>
 
-      <article class="why-us__card">
+      <article class="why-us__card" data-animate style="background-image: url(/whyus-ambiente-comp.jpg)">
+        <span class="why-us__card-overlay" aria-hidden="true"></span>
         <span class="why-us__card-number" aria-hidden="true">03</span>
         <div class="why-us__card-body">
           <h3 class="why-us__card-title">AMBIENTE QUE MUEVE</h3>
@@ -127,29 +130,46 @@
   }
 
   .why-us__card {
+    position: relative;
     display: flex;
     gap: var(--space-lg);
     padding: var(--space-lg);
-    background: var(--color-bg-card);
+    background-size: cover;
+    background-position: center;
+    background-color: #111;
     border: 1px solid var(--color-border);
-    transition: border-color var(--transition-fast);
+    overflow: hidden;
+    transition: border-color var(--transition-fast), transform var(--transition-fast);
   }
 
   .why-us__card:hover {
     border-color: var(--color-accent);
+    transform: scale(1.02);
+  }
+
+  .why-us__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .why-us__card-number {
+    position: relative;
+    z-index: 1;
     font-family: var(--font-display);
     font-size: var(--text-sm);
     font-weight: var(--fw-bold);
-    color: var(--color-text-dim);
+    color: var(--color-accent);
     letter-spacing: var(--tracking-wide);
     flex-shrink: 0;
     margin-top: 0.15rem;
   }
 
   .why-us__card-body {
+    position: relative;
+    z-index: 1;
     flex: 1;
   }
 
@@ -168,6 +188,30 @@
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--color-text-muted);
+  }
+
+  .why-us__tag {
+    transition-delay: 0s;
+  }
+
+  .why-us__title {
+    transition-delay: 0.1s;
+  }
+
+  .why-us__desc {
+    transition-delay: 0.2s;
+  }
+
+  .why-us__card:nth-child(1) {
+    transition-delay: 0.25s;
+  }
+
+  .why-us__card:nth-child(2) {
+    transition-delay: 0.35s;
+  }
+
+  .why-us__card:nth-child(3) {
+    transition-delay: 0.45s;
   }
 
   @media (min-width: 768px) {

@@ -1,13 +1,13 @@
 <section class="hero">
   <div class="hero__visual" aria-hidden="true">
-    <div class="hero__visual-bg"></div>
+    <div class="hero__visual-bg" style="background-image: url(/hero-bg-comp.jpg)"></div>
     <div class="hero__visual-overlay"></div>
   </div>
 
   <div class="hero__content">
-    <p class="hero__subtitle">SÁENZ PEÑA, BUENOS AIRES</p>
+    <p class="hero__subtitle" data-animate>SÁENZ PEÑA, BUENOS AIRES</p>
 
-    <h1 class="hero__title">
+    <h1 class="hero__title" data-animate>
       <span class="hero__title-line hero__title-line--full">ENTRENÁ</span>
       <span class="hero__title-line">
         <span class="hero__title-muted">EN</span>
@@ -15,7 +15,7 @@
       </span>
     </h1>
 
-    <div class="hero__ctas">
+    <div class="hero__ctas" data-animate>
       <a href="#" class="hero__cta hero__cta--primary">
         Reservá tu clase de prueba gratis
         <span class="hero__cta-arrow" aria-hidden="true">→</span>
@@ -23,7 +23,6 @@
       <a href="#" class="hero__cta hero__cta--secondary">Conocé el gimnasio</a>
     </div>
   </div>
-
 </section>
 
 <style>
@@ -46,10 +45,9 @@
   .hero__visual-bg {
     width: 100%;
     height: 100%;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, #1a0a0a 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 30% 80%, #0d0d0d 0%, transparent 50%),
-      linear-gradient(180deg, #0d0d0d 0%, #0A0A0A 100%);
+    background-size: cover;
+    background-position: center 20%;
+    background-color: #0A0A0A;
   }
 
   .hero__visual-overlay {
@@ -159,6 +157,18 @@
     border-bottom-color: var(--color-text-muted);
   }
 
+  .hero__subtitle {
+    transition-delay: 0.1s;
+  }
+
+  .hero__title {
+    transition-delay: 0.2s;
+  }
+
+  .hero__ctas {
+    transition-delay: 0.35s;
+  }
+
   @media (min-width: 768px) {
     .hero__content {
       padding-top: 8rem;
@@ -174,6 +184,10 @@
       align-items: center;
       gap: var(--space-lg);
     }
+
+    .hero__visual-bg {
+      background-position: center 30%;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -182,17 +196,16 @@
     }
 
     .hero__visual {
-      width: 50%;
-      left: 50%;
+      width: 55%;
+      left: 45%;
     }
 
     .hero__visual-bg {
-      background:
-        radial-gradient(ellipse 100% 70% at 50% 50%, #1a0a0a 0%, #0d0d0d 50%, #0A0A0A 100%);
+      background-position: center 25%;
     }
 
     .hero__visual-overlay {
-      background: linear-gradient(90deg, var(--color-bg) 0%, transparent 30%);
+      background: linear-gradient(90deg, var(--color-bg) 0%, var(--color-bg) 10%, transparent 35%);
     }
 
     .hero__content {
