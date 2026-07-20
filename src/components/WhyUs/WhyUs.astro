@@ -1,3 +1,10 @@
+---
+import { Image } from "astro:assets";
+import comunidadBg from "../../assets/whyus-comunidad.jpg";
+import entrenadoresBg from "../../assets/whyus-entrenadores.jpg";
+import ambienteBg from "../../assets/whyus-ambiente.jpg";
+---
+
 <section class="why-us" id="nosotros" data-animate>
   <div class="why-us__bg-text" aria-hidden="true">NOSOTROS</div>
 
@@ -5,7 +12,7 @@
     <header class="why-us__intro">
       <p class="why-us__tag" data-animate>// NOSOTROS</p>
       <h2 class="why-us__title" data-animate>
-        <span class="why-us__title-line">POR QUÉ</span>
+        <span class="why-us__title-line">POR QUÉ </span>
         <span class="why-us__title-line why-us__title-line--accent">ELEGIRNOS</span>
       </h2>
       <p class="why-us__desc" data-animate>
@@ -14,10 +21,11 @@
     </header>
 
     <div class="why-us__cards">
-      <article class="why-us__card" data-animate style="background-image: url(/whyus-comunidad-comp.jpg)">
+      <article class="why-us__card" data-animate>
+        <Image src={comunidadBg} alt="Grupo de personas entrenando juntas" class="why-us__card-bg" width={800} height={500} />
         <span class="why-us__card-overlay" aria-hidden="true"></span>
-        <span class="why-us__card-number" aria-hidden="true">01</span>
         <div class="why-us__card-body">
+          <span class="why-us__card-number" aria-hidden="true">01</span>
           <h3 class="why-us__card-title">COMUNIDAD REAL</h3>
           <p class="why-us__card-desc">
             Acá no sos un número. Todos se conocen, se apoyan y crecen juntos. Somos un grupo que entrena, no solo un lugar con máquinas.
@@ -25,10 +33,11 @@
         </div>
       </article>
 
-      <article class="why-us__card" data-animate style="background-image: url(/whyus-entrenadores-comp.jpg)">
+      <article class="why-us__card" data-animate>
+        <Image src={entrenadoresBg} alt="Entrenador ayudando a un alumno" class="why-us__card-bg" width={800} height={500} />
         <span class="why-us__card-overlay" aria-hidden="true"></span>
-        <span class="why-us__card-number" aria-hidden="true">02</span>
         <div class="why-us__card-body">
+          <span class="why-us__card-number" aria-hidden="true">02</span>
           <h3 class="why-us__card-title">ENTRENADORES PRESENTES</h3>
           <p class="why-us__card-desc">
             Cada clase tiene un profe que está ahí con vos. Corrigiendo, motivando, empujando. Nada de máquinas solas y mirar el celular.
@@ -36,10 +45,11 @@
         </div>
       </article>
 
-      <article class="why-us__card" data-animate style="background-image: url(/whyus-ambiente-comp.jpg)">
+      <article class="why-us__card" data-animate>
+        <Image src={ambienteBg} alt="Personas entrenando en un ambiente energético" class="why-us__card-bg" width={800} height={500} />
         <span class="why-us__card-overlay" aria-hidden="true"></span>
-        <span class="why-us__card-number" aria-hidden="true">03</span>
         <div class="why-us__card-body">
+          <span class="why-us__card-number" aria-hidden="true">03</span>
           <h3 class="why-us__card-title">AMBIENTE QUE MUEVE</h3>
           <p class="why-us__card-desc">
             La energía del grupo, la música, el compromiso. Un lugar donde las excusas se quedan afuera y las ganas de volver crecen cada día.
@@ -134,8 +144,6 @@
     display: flex;
     gap: var(--space-lg);
     padding: var(--space-lg);
-    background-size: cover;
-    background-position: center;
     background-color: #111;
     border: 1px solid var(--color-border);
     overflow: hidden;
@@ -147,17 +155,27 @@
     transform: scale(1.02);
   }
 
+  .why-us__card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    z-index: 0;
+  }
+
   .why-us__card-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
   }
 
   .why-us__card-number {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     font-family: var(--font-display);
     font-size: var(--text-sm);
     font-weight: var(--fw-bold);
@@ -169,7 +187,7 @@
 
   .why-us__card-body {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     flex: 1;
   }
 

@@ -10,8 +10,8 @@
   --color-bg: #0A0A0A;
   --color-bg-card: #111111;
   --color-bg-elevated: #1A1A1A;
-  --color-accent: #FF4C4C;
-  --color-accent-hover: #e63939;
+  --color-accent: #D93A3A;
+  --color-accent-hover: #C22E2E;
   --color-text: #FFFFFF;
   --color-text-muted: #8E8E8E;
   --color-text-dim: #555555;
@@ -119,4 +119,10 @@ a {
     transform: none;
     transition: none;
   }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }

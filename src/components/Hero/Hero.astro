@@ -1,6 +1,11 @@
+---
+import { Image } from "astro:assets";
+import heroBg from "../../assets/hero-bg.jpg";
+---
+
 <section class="hero">
   <div class="hero__visual" aria-hidden="true">
-    <div class="hero__visual-bg" style="background-image: url(/hero-bg-comp.jpg)"></div>
+    <Image src={heroBg} alt="Personas entrenando en el gimnasio" class="hero__visual-bg" width={1200} height={800} />
     <div class="hero__visual-overlay"></div>
   </div>
 
@@ -10,17 +15,17 @@
     <h1 class="hero__title" data-animate>
       <span class="hero__title-line hero__title-line--full">ENTRENÁ</span>
       <span class="hero__title-line">
-        <span class="hero__title-muted">EN</span>
+        <span class="hero__title-muted">EN </span>
         <span class="hero__title-white">TU BARRIO</span>
       </span>
     </h1>
 
     <div class="hero__ctas" data-animate>
-      <a href="#" class="hero__cta hero__cta--primary">
+      <a href="https://wa.me/541123456789" target="_blank" rel="noopener noreferrer" class="hero__cta hero__cta--primary">
         Reservá tu clase de prueba gratis
         <span class="hero__cta-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="#" class="hero__cta hero__cta--secondary">Conocé el gimnasio</a>
+      <a href="#nosotros" class="hero__cta hero__cta--secondary">Conocé el gimnasio</a>
     </div>
   </div>
 </section>
@@ -43,11 +48,13 @@
   }
 
   .hero__visual-bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center 20%;
-    background-color: #0A0A0A;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
   }
 
   .hero__visual-overlay {
@@ -186,7 +193,7 @@
     }
 
     .hero__visual-bg {
-      background-position: center 30%;
+      object-position: center 30%;
     }
   }
 
@@ -201,7 +208,7 @@
     }
 
     .hero__visual-bg {
-      background-position: center 25%;
+      object-position: center 25%;
     }
 
     .hero__visual-overlay {

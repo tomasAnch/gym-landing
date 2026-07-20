@@ -1,3 +1,10 @@
+---
+import { Image } from "astro:assets";
+import martinAvatar from "../../assets/avatar-martin.jpg";
+import carolinaAvatar from "../../assets/avatar-carolina.jpg";
+import francoAvatar from "../../assets/avatar-franco.jpg";
+---
+
 <section class="testimonials" id="testimonios" data-animate>
   <div class="testimonials__bg-text" aria-hidden="true">TESTIMONIOS</div>
 
@@ -5,7 +12,7 @@
     <header class="testimonials__header">
       <p class="testimonials__tag" data-animate>// TESTIMONIOS</p>
       <h2 class="testimonials__title" data-animate>
-        <span class="testimonials__title-line">LOS QUE</span>
+        <span class="testimonials__title-line">LOS QUE </span>
         <span class="testimonials__title-line testimonials__title-line--accent">ENTRENAN ACÁ</span>
       </h2>
       <p class="testimonials__desc" data-animate>
@@ -21,7 +28,7 @@
         </p>
         <footer class="testimonials__author">
           <div class="testimonials__avatar">
-            <img src="/avatar-martin.jpg" alt="Martín" class="testimonials__avatar-img" />
+            <Image src={martinAvatar} alt="Martín" class="testimonials__avatar-img" width={160} height={160} />
           </div>
           <div class="testimonials__author-info">
             <span class="testimonials__author-name">MARTÍN</span>
@@ -37,7 +44,7 @@
         </p>
         <footer class="testimonials__author">
           <div class="testimonials__avatar">
-            <img src="/avatar-carolina.jpg" alt="Carolina" class="testimonials__avatar-img" />
+            <Image src={carolinaAvatar} alt="Carolina" class="testimonials__avatar-img" width={160} height={160} />
           </div>
           <div class="testimonials__author-info">
             <span class="testimonials__author-name">CAROLINA</span>
@@ -53,7 +60,7 @@
         </p>
         <footer class="testimonials__author">
           <div class="testimonials__avatar">
-            <img src="/avatar-franco.jpg" alt="Franco" class="testimonials__avatar-img" />
+            <Image src={francoAvatar} alt="Franco" class="testimonials__avatar-img" width={160} height={160} />
           </div>
           <div class="testimonials__author-info">
             <span class="testimonials__author-name">FRANCO</span>
